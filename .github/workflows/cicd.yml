@@ -3,17 +3,7 @@ name: CICD
 
 # Manual click (deliver) workflow whenever user needs
 on:
-  workflow_dispatch: 
-    inputs:
-      environment:
-        description: This is the environment value where this workflow runs
-        default: 'dev'
-        required: true
-        type: choice
-        options:
-          - dev
-          - prod
-          - staging
+  workflow_dispatch:
 
 jobs:
   # every job needs seperate runner, its called parallelism
@@ -23,22 +13,18 @@ jobs:
       - name: checkout code
         run: echo "COde Clone from GitHub"
   build:
-    needs: [code]
     runs-on: ubuntu-latest
     steps:
       - name: Build Docker Container
         run: echo "Docker Container build"
   test:
-    needs: [build]
     runs-on: ubuntu-latest
     steps:
       - name: Test the container
         run: echo "Testing the container"
         
   deploy:
-    if: inputs.environment == 'dev'
-    needs: [build,test]
-    runs-on: ubuntu-latest
-    steps:
-      - name: Deploying the app
-        run: echo "Docker compose deployed the app"
+      runs-on: ubuntu-latest
+      steps:
+        - name: Deploying the app
+          run: echo "Docker compose deployed the app"
