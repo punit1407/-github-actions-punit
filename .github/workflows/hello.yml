@@ -29,4 +29,4 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: version of kind,kubelet and docker, etc
-        run: docker --version && kind --version && kubelet version
+        run: docker --version && kind --version && kubectl version
