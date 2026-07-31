@@ -20,13 +20,13 @@ jobs:
     # this is github runner, each job runs on a runner
     runs-on: ubuntu-latest
     steps:
-      - name: say hello to users
-        run: echo "Hello Punit"
+      - name: say hello to My Team
+        run: echo "Hello DevOps-Team"
 
       - name: say hello to username
         run: echo "Hello $USER"
   show-version:
     runs-on: ubuntu-latest
     steps:
-      - name: version of kind,kubelet and docker, etc
-        run: docker --version && kind --version && kubectl version
+      - name: version of kind and docker, etc
+        run: docker --version && kind --version 
