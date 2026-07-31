@@ -25,8 +25,8 @@ jobs:
 
       - name: say hello to username
         run: echo "Hello $USER"
-  details:
+  show-version:
     runs-on: ubuntu-latest
     steps:
-      - name: version of python, docker, etc
-        run: docker --version && python --version
+      - name: version of kind,kubelet and docker, etc
+        run: docker --version && kind --version && kubelet version
