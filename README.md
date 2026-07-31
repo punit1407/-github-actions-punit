@@ -1,10 +1,10 @@
-# GitHub Actions: Zero to Hero
+# GitHub Actions: With Punit
 
 A hands-on repo to learn GitHub Actions from scratch. Each workflow covers a real-world concept — start from the top and work your way down.
 
 ## What's Inside
 
-This repo contains a **Flask web app** with a full **CI/CD + DevSecOps pipeline** built entirely using GitHub Actions.
+This repo contains a **web app** with a full **CI/CD + DevSecOps pipeline** built entirely using GitHub Actions.
 
 ```
 app.py                  → Flask app (source code)
